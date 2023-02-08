@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title> Lampes </title>
+  <meta http-equiv="refresh" content=5>
+  <style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 5px;
+}
+#lampe1, #lampe2 {
+  font-weight:bold;
+  color:red;
+}
+</style>
+
+  
+</head>
+
+<body>
+
+<h1>État des lampes</h1>
+
+<table>
+  <tr>
+    <th> Lampe 1 </th>
+    <td id='lampe1'>--</td>
+  </tr>
+  <tr>
+    <th> Lampe 2 </th>
+    <td id='lampe2'>--</td>
+  </tr>
+</table>
+<br><br><br><br>
+<form action="" method="post">
+  <p> Modifier l'état des leds : </p>
+  <div>
+    <label for ="lampe1">Etat lampe 1 : </label>
+    <label for ="lampe1">Eteinte</label>
+    <input type="checkbox" id="lampe1e" name="lampe1" value="valuelampe1e">
+    <label for ="lampe1">   Allumée</label>
+    <input type="checkbox" id="lampe1a" name="lampe1" value="valuelampe1a"><br>
+    
+    <label for ="lampe2">Etat lampe 2 : </label>
+    <label for ="lampe2">Eteinte</label>
+    <input type="checkbox" id="lampe2e" name="lampe2" value="valuelampe2e">
+    <label for ="lampe2">   Allumée  </label>
+    <input type="checkbox" id="lampe2a" name="lampe2" value="valuelampe2a"><br>
+  </div  
+  <div><br>
+    <button type="submit">Valider</button>
+  </div>
+    
+  
+  </form>
+
+
+
+<script>
+  const jsonfile = JSON.parse({{jsonfile|tojson}});
+  //var j = JSON.stringify(jsonfile)
+  //console.log(jsonfile['lampe1']);
+  document.getElementById('lampe1').innerHTML = jsonfile['lampe1'];
+  document.getElementById('lampe2').innerHTML = jsonfile['lampe2'];
+</script>
+
+</body>
+</html>
